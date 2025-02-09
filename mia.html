@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume - Game of Thrones Theme</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        
+        body {
+            background: url('gotbackground.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Trajan Pro', serif;
+            color: #f0f0f0;
+            transition: background 0.5s ease;
+            overflow-x: hidden;
+        }
+    
+        /* Snowflake Styling */
+        .snowflake {
+            color: white;
+            font-size: 1em;
+            position: fixed;
+            top: -10px;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall 10s linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+            font-family: 'MyCustomFont', serif;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            padding: 10px 0;
+        }
+        header nav ul li {
+            margin: 25px 50px;
+        }
+        header nav ul li a {
+            text-decoration: none;
+            color: #f7f5f2;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
+        header nav ul li a:hover {
+            color: #e20000cc;
+        }
+        main {
+            padding-top: 110px; /* Adjust based on the height of your header */
+        }
+        section {
+            display: none;
+            width: 100%;
+            padding: 35px;
+            margin: 0 auto;
+            max-width: 900px;
+            background: rgba(0, 0, 0, 0.596);
+            border: 5px solid #740e0e;
+            border-radius: 20px;
+            color: #f0f0f0;
+            box-sizing: border-box;
+            animation: fadeIn 2s ease-in-out;
+        }
+        section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1, h2, h3 {
+            font-family: 'Game of Thrones Font', serif;
+            text-transform: uppercase;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+                <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#hobbies"><i class="fas fa-image"></i> Hobbies</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <div>
+                <h1>Welcome  to  My Interactive Resume</h1>
+                <p>
+                    Step into my professional world, where creativity meets dedication, 
+                    all wrapped in this Game of Thrones-inspired theme. Here, you’ll discover my skills, 
+                    experiences, and passions that define who I am and what I can bring to the table.
+
+                    Feel free to explore the sections and get to know me better. 
+                    If you're searching for someone who values collaboration and innovation, let’s team up 
+                    and create something extraordinary together!
+                </p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="about-header">
+                <img src="myimage.png" alt="My Photo">
+                <h1>Romiann G. Cornelio</h1>
+            </div>
+            <div class="about-content">
+                <p>
+                    Romiann is a passionate and goal-oriented professional from Las Pinas City, Metro Manila. 
+                    With expertise in project management, technical skills, communication, and leadership, she excels in driving 
+                    meaningful results and fostering collaboration. Known for her dedication and proactive approach, 
+                    Romiann thrives in dynamic environments where she can contribute to impactful projects and inspire positive change.
+                </p>
+            </div>
+        </section>        
+
+        <!-- Skills Section -->
+        <section id="skills">
+            </div>
+            <h2>Romiann is skilled in project management, technical problem-solving, effective communication, and leadership. 
+                She excels at organizing tasks, streamlining processes, and fostering teamwork to achieve outstanding results.
+            </h2>
+            <div class="skills-content">
+              <div class="skill-circle">
+                <div class="circle" data-percentage="85">
+                  <div class="circle-text">Coding Skills</div>
+                </div>
+                <div class="circle" data-percentage="75">
+                  <div class="circle-text">Project Management</div>
+                </div>
+                <div class="circle" data-percentage="90">
+                  <div class="circle-text">Technical Skills</div>
+                </div>
+                <div class="circle" data-percentage="80">
+                  <div class="circle-text">Communication Skills</div>
+                </div>
+                <div class="circle" data-percentage="70">
+                  <div class="circle-text">Leadership Skills</div>
+                </div>
+              </div>
+            </div>
+          </section>          
+
+        <style>
+           #skills {
+            padding: 20px;
+            background-color: rgba(7, 4, 4, 0.589);
+            text-align: center;
+        }
+
+            .skills-content {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+            .skill-circle {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+            .circle {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(
+            #940000 calc(var(--percentage) * 1%), #050000 0%
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px;
+        } 
+
+            .circle::before {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #0a0101;
+            border-radius: 50%;
+        }
+
+            .circle-text {
+            position: absolute;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #f8b704;
+            z-index: 1;
+        }
+        </style>
+
+        <script>
+        document.querySelectorAll('.circle').forEach(circle => {
+            const percentage = circle.getAttribute('data-percentage');
+            circle.style.setProperty('--percentage', percentage);
+        });
+        </script>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="section">
+            <h2>Hobbies</h2>
+            <h3>Romiann enjoys expressing her creativity and passion through singing, immersing herself 
+                in the worlds of books through reading, experimenting with flavors in the kitchen while cooking, 
+                and exploring new places through traveling. These hobbies fuel her curiosity, creativity, 
+                and zest for life.<h/3>
+            <h4>____</h4>
+            <div class="hobbies-gallery">
+                <div class="hobby-card">
+                    <img src="singinghobby.jpg" alt="Singing">
+                    <div class="overlay">
+                        <p>Singing</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="reading.jpg" alt="Reading">
+                    <div class="overlay">
+                        <p>Reading</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="cooking.jpg" alt="Cooking">
+                    <div class="overlay">
+                        <p>Cooking</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <img src="travelling.jpg" alt="Watching Series">
+                    <div class="overlay">
+                        <p>Travelling</p>
+                    </div>
+                </div>
+            </div>
+            <style>
+            #hobbies.section {
+            background: rgba(7, 4, 4, 0.589);
+            border: none;
+            padding: 10px;
+            font-family: 'MyCustomFont', serif;
+            text-align: left;
+            border: 5px solid #740e0e;
+            
+        }
+        .hobbies-gallery {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            max-width: 150%;
+            margin: 10 auto;
+            flex-wrap: nowrap;
+        }
+        .hobby-card {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1em;
+        }
+        .hobby-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+        .hobby-card img:hover {
+            transform: scale(1.1);
+        }
+        .overlay {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+        }
+        @media screen and (max-width: 768px) {
+            .hobbies-gallery {
+                flex-wrap: wrap;
+            }
+            .hobby-card {
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .hobby-card {
+                width: 100%;
+            }
+        }
+            </style>
+        </section>
+
+        <!-- Experience Section -->
+<section id="experience">
+    <div class="experience-header">
+    </div>
+    <div class="experience-content">
+        <div class="job" id="ojt-intern">
+            <h3>O J T  Intern</h3>
+            <p>SKLP Car Rental | August 2024 - September 2024</p>
+            <p>"Gained hands-on experience in startup operations and business development"</p>
+        </div>
+        
+        <div class="job" id="customer-service">
+            <h3>Customer Service Agent</h3>
+            <p>IBEX Global Paranaque and Alabang Branch | August 2022 - July 2023</p>
+            <p>"Provided exceptional customer service by addressing inquiries, resolving issues, and ensuring customer satisfaction."</p>
+        </div>
+
+        <div class="job" id="personal-shopper">
+            <h3>Personal Shopper Team Leader</h3>
+            <p>Metromart | March 2021 - February 2022</p>
+            <p>"Led the team of personal shoppers, providing guidance and support to ensure excellent customer service."</p>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Customer Service Agent -->
+<div id="modal-ojt-intern" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modal-customer-service">&times;</span>
+        <h3>When Mia Finished the OJT</h3>
+        <div class="gallery">
+            <img src="sklp2.jpg" alt="Customer Service Image 2">
+            <img src="sklp3.jpg" alt="Customer Service Image 3">
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Customer Service Agent -->
+<div id="modal-customer-service" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modal-customer-service">&times;</span>
+        <h3>When Mia was in Ibex</h3>
+        <div class="gallery">
+            <img src="ibex1.jpg" alt="Customer Service Image 1">
+            <img src="ibex2.jpg" alt="Customer Service Image 2">
+            <img src="ibex3.jpg" alt="Customer Service Image 3">
+            <img src="ibex4.jpg" alt="Customer Service Image 4">
+            <img src="ibex5.jpg" alt="Customer Service Image 5">
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Personal Shopper Team Leader -->
+<div id="modal-personal-shopper" class="modal">
+    <div class="modal-content">
+        <span class="close" data-modal="modal-personal-shopper">&times;</span>
+        <h3>When Mia was a Personal shopper</h3>
+        <div class="gallery">
+            <img src="metromart1.jpg" alt="Personal Shopper Image 1">
+            <img src="metromart2.jpg" alt="Personal Shopper Image 2">
+            <img src="metromart3.jpg" alt="Personal Shopper Image 3">
+            <img src="metromart4.jpg" alt="Personal Shopper Image 4">
+            <img src="metromart5.jpg" alt="Personal Shopper Image 5">
+        </div>
+    </div>
+</div>
+
+<style>
+
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 40px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    
+}
+
+.modal-content {
+    background-color: #fefefec0;
+    margin: auto;
+    padding: 50px;
+    border: 5px solid #8b0808;
+    width: 85%;
+    color: black;
+    border-radius: 10px;
+    font-size: 2em;
+}
+
+.close {
+    color: #0f0303;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gallery {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    justify-content: center;
+    
+}
+
+.gallery img {
+    max-width: 20%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.gallery img:hover {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+.clicked {
+    filter: sepia(1) hue-rotate(200deg);
+}
+
+/* Default style */
+.job h3 {
+    color: #f8b704;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.job h3:hover {
+    color: #940000;
+}
+
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle modal open and close
+    const jobs = {
+        "customer-service": "modal-customer-service",
+        "personal-shopper": "modal-personal-shopper",
+        "ojt-intern":"modal-ojt-intern"
+    };
+
+    for (const [jobId, modalId] of Object.entries(jobs)) {
+        const jobElement = document.getElementById(jobId);
+        const modal = document.getElementById(modalId);
+
+        jobElement.addEventListener('click', () => {
+            modal.style.display = "block";
+        });
+
+        modal.querySelector('.close').addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+});
+
+// Select the job headings
+const jobHeadings = document.querySelectorAll(".job h3");
+
+jobHeadings.forEach(heading => {
+    heading.addEventListener("click", () => {
+        // Remove active class from all headings
+        jobHeadings.forEach(h => h.classList.remove("active"));
+        
+        // Add active class to the clicked heading
+        heading.classList.add("active");
+    });
+});
+
+</script>
+        </section>
+        
+        
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-header">
+                <p>You can contact me here:</p>
+                <div class="social-icons">
+                    <!-- Email -->
+                    <a href="mailto:miag780@gmail.com" aria-label="Email">
+                      <i class="fas fa-envelope"></i>
+
+                    </a>
+                    <!-- Facebook -->
+                    <a href="https://www.facebook.com/share/18Rq1twdgu/" target="_blank" aria-label="Facebook">
+                      <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            <h2>____</h2>
+            <p>You can also message me directly</p>
+            <div class="contact-form">
+                <form id="contact-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <!-- CV Download Button -->
+                <div class="cv-download">
+                    <p>Here is my CV File</p>
+                    <a href="OJT_MIA_RESUME.pdf" download="MIA_CV.pdf" class="cv-btn">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        const navLinks = document.querySelectorAll('nav ul li a');
+        const sections = document.querySelectorAll('main section');
+
+        const backgrounds = {
+            home: "url('stark.jpg')",
+            about: "url('targaryen.jpg')",
+            skills: "url('lannister.jpg')",
+            hobbies: "url('martell.jpg')",
+            experience: "url('greyjoy.jpg')",
+            contact: "url('tully.jpg')"
+        };
+
+        const setBackground = (targetId) => {
+            document.body.style.backgroundImage = backgrounds[targetId];
+        };
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                sections.forEach(section => section.classList.remove('active'));
+                document.getElementById(targetId).classList.add('active');
+                setBackground(targetId);
+            });
+        });
+
+        const activeSection = document.querySelector('main section.active');
+        if (activeSection) {
+            setBackground(activeSection.id);
+        }
+
+        // Snowflake generation
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.textContent = '❄';
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.fontSize = Math.random() * 20 + 10 + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 3 + 's';
+
+            document.body.appendChild(snowflake);
+
+            setTimeout(() => {
+                snowflake.remove();
+            }, 5000);
+        }
+
+        setInterval(createSnowflake, 150);
+
+    </script>
+
+<body>
+    <audio id="bg-music" autoplay loop>
+        <source src="GOT.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <script>
+        const audio = document.getElementById('bg-music');
+        audio.volume = 0.2; // Sets the volume to 30%
+    </script>
+
+    <script>
+    document.addEventListener("mousemove", (event) => {
+      createCursorSnowflake(event.pageX, event.pageY);
+    });
+  
+    function createCursorSnowflake(x, y) {
+      const cursorSnowflake = document.createElement("div");
+      cursorSnowflake.className = "cursor-snowflake";
+      document.body.appendChild(cursorSnowflake);
+  
+      // Set snowflake position
+      cursorSnowflake.style.left = `${x}px`;
+      cursorSnowflake.style.top = `${y}px`;
+  
+      // Random size for snowflakes
+      const size = Math.random() * 8 + 4;
+      cursorSnowflake.style.width = `${size}px`;
+      cursorSnowflake.style.height = `${size}px`;
+  
+      // Fade-out and removal
+      setTimeout(() => {
+        cursorSnowflake.remove();
+      }, 2000);
+    }
+  </script>
+
+<style>
+    .cursor-snowflake {
+      position: absolute;
+      background-color: white;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: fadeMove 2s ease-out forwards;
+      opacity: 0.9;
+    }
+  
+    /* Snowflake movement and fade-out */
+    @keyframes fadeMove {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.9;
+      }
+      100% {
+        transform: translateY(40px) scale(0.5);
+        opacity: 0;
+      }
+    }
+  </style>
+    
+
+<footer>
+    <p>&copy; Winter is Coming.</p>
+</footer>
+
+</body>
+</html>

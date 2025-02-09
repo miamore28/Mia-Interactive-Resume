@@ -1,0 +1,320 @@
+
+
+/* Home Section */
+#home {
+    font-size: 1.3em; /* Adjust the overall font size for the Home section */
+    padding: 40px; /* Increase padding for the Home section */
+}
+
+#home h1 {
+    font-size: 2.5em; /* Larger header font size for emphasis */
+    text-align: center; /* Center-align the header */
+    line-height: 1.7; /* Improve readability with line spacing */
+    margin-top: 0px;
+    color: #f8b704
+}
+
+#home p {
+    font-size: 1.2em; /* Paragraph font size */
+    text-align: center; /* Center-align the text */
+    line-height: 1.5; /* Improve readability with line spacing */
+    font-family: 'Trajan Pro', serif;
+    font-weight: bold;
+}
+
+/* About Section */
+#about {
+    font-size: 1.5em; /* Adjust the overall font size */
+    padding: 20px 60px; /* 30px for top and bottom, 50px for left and right */
+    font-family: 'Trajan Pro', serif;
+    text-align: center; /* Center-align the text */
+    font-weight: bold
+}
+
+#about h1 {
+    font-size: 1.7em; /* Header font size */
+    color: #f8b704
+}
+
+#about p {
+    font-size: 1em; /* Paragraph font size */
+    line-height: 1.4; 
+}
+
+/* Skills Section */
+#skills {
+    font-size: 1.2em;
+    font-family: 'MyCustomFont', serif;
+}
+
+#skills h2 {
+    font-size: 1.3em;
+    margin-top: 3;
+    font-family: 'Trajan Pro', serif;
+    line-height: 1.2; 
+    color: #f0cfa5;
+}
+
+#skills ul li {
+    font-size: 0.8em;
+}
+
+/* Experience Section */
+#experience {
+    font-size: 1.5em;
+    font-family: 'Trajan Pro', serif;
+    overflow: hidden;
+    text-align: center; /* Center-align the text */
+}
+
+#experience h2 {
+    font-size: 1.5em;
+}
+
+#experience h3 {
+    font-size: 1.3em;
+}
+
+#experience p {
+    font-size: 1em;
+}
+
+/* Hobbies Section */
+#hobbies {
+    font-size: 1.5em;
+    font-family: 'MyCustomFont', serif;
+   
+}
+
+#hobbies h2 {
+    font-size: 1.5em;
+    text-align: center; /* Center-align the text */
+    color: #f8b704
+}
+
+#hobbies h3 {
+    font-size: 0.8em;
+    text-align: center; /* Center-align the text */
+    line-height: 1.2; 
+    font-family: 'Trajan Pro', serif;
+    color: #f0cfa5;
+}
+
+#hobbies h4 {
+    font-size: 0.2em;
+    text-align: center; /* Center-align the text */
+    color: black;
+}
+
+#hobbies p {
+    font-size: 0.8em;
+    font-family: 'MyCustomFont', serif;
+    color: #ebe8e1;
+}
+
+/* Contact Section */
+#contact {
+    font-size: 1em;
+    font-family: 'MyCustomFont', serif;
+}
+
+#contact h2 {
+    font-size: 0.5em;
+    color: rgba(7, 4, 4, 0.377);
+}
+
+#contact p {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+#contact label {
+    font-size: 0.8em;
+}
+
+#contact input,
+#contact textarea {
+    font-size: 1em;
+}
+
+#contact button {
+    font-size: 1.1em;
+}
+
+/* Root Variables for Customization */
+:root {
+    --section-bg-color: rgba(7, 4, 4, 0.377);
+    --section-border-color: #740e0e;
+    --section-border-radius: 20px;
+    --section-padding: 50px;
+    --section-max-width: 900px;
+    --section-font-color: #f0f0f0;
+}
+
+/* General Section Styles */
+section {
+    display: none;
+    width: 100%;
+    padding: var(--section-padding);
+    margin: 0 auto;
+    max-width: var(--section-max-width);
+    background: var(--section-bg-color);
+    border: 4px solid var(--section-border-color);
+    border-radius: var(--section-border-radius);
+    color: var(--section-font-color);
+    box-sizing: border-box;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+/* Custom Styles for Each Section */
+#home {
+    --section-bg-color: rgba(7, 4, 4, 0.377);
+    --section-border-color: #740e0e;
+}
+
+#about {
+    --section-bg-color: rgba(7, 4, 4, 0.377);
+    --section-border-color: #740e0e;
+}
+
+#skills {
+    --section-bg-color: rgba(7, 4, 4, 0.527);
+    --section-border-color: #740e0e;
+}
+
+#experience {
+    --section-bg-color: rgba(7, 4, 4, 0.452);
+    --section-border-color: #740e0e;
+}
+
+#contact {
+    --section-bg-color: rgba(7, 4, 4, 0.377);
+    --section-border-color: #740e0e;
+}
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('Game\ of\ Thrones.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* Header and Content Styling */
+section h1, section h2, section h3 {
+    margin-bottom: 20px;
+    font-family: 'MyCustomFont', serif;
+    text-transform: uppercase;
+}
+
+section p {
+    line-height: 1.6;
+    font-size: 1.5em;
+}
+
+section ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact Form Styling */
+.contact-form label {
+    display: block;
+    margin-top: 20px;
+  
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--section-border-color);
+    border-radius: 10px;
+    background-color: #940000;
+    color: var(--section-font-color);
+}
+
+.contact-form button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 5em;
+    font-family: 'Trajan Pro', serif;
+    background-color:  #940000;
+    color: var(--section-font-color);
+    border: 1px;
+    border-color: #f0f0f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #f8b704;
+}
+
+#about img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 100%; /* Make it circular */
+    border: 5px solid var(--section-border-color); /* Optional border */
+    margin: 0px 0; /* Add spacing around the image */
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  a:focus {
+    outline: none;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: left;
+    gap: 40px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    font-size: 4rem;
+    color: #f8b704;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #940000; /* You can customize hover colors */
+  }
+  
+  .cv-download {
+    margin-top: 50px;
+    text-align: left;
+  }
+  
+  .cv-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #940000;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Trajan Pro', serif;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cv-btn:hover {
+    background-color: #f8b704;
+  }
+  
+
+  
